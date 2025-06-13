@@ -757,7 +757,7 @@ function fnc_project_color(values, context) {
 
 
 
-function exp_vulnerable_areas_1rule0_eval_expression(context) {
+function exp_VisionZeroVulnerableAreas_1rule0_eval_expression(context) {
     // VA = 1 AND HVA <> 1
 
     var feature = context.feature;
@@ -770,7 +770,7 @@ function exp_vulnerable_areas_1rule0_eval_expression(context) {
 }
 
 
-function exp_vulnerable_areas_1rule1_eval_expression(context) {
+function exp_VisionZeroVulnerableAreas_1rule1_eval_expression(context) {
     // HVA = 1
 
     var feature = context.feature;

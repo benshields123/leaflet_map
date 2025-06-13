@@ -33,15 +33,15 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/vulnerable_areas_1.js"></script>
-        <script src="data/Pedestrian_HIN_2.js"></script>
-        <script src="data/Bicyclist_HIN_3.js"></script>
-        <script src="data/Road_Segment_5951585966316696895_4.js"></script>
-        <script src="data/Traffic_Accidents_2_csv_5.js"></script>
+        <script src="data/VisionZeroVulnerableAreas_1.js"></script>
+        <script src="data/PedestrianHighInjuryCorridors_2.js"></script>
+        <script src="data/BicyclistHighInjuryCorridors_3.js"></script>
+        <script src="data/TDOTnonNDOTROW_4.js"></script>
+        <script src="data/TrafficAccidentsInvolvingPedestrians_5.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[36.11143580305292,-86.85712047514247],[36.17824451714862,-86.71987840648225]]);
+        }).fitBounds([[36.12513117755158,-86.83152145183153],[36.19193989164731,-86.69427938317126]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -92,7 +92,7 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        function pop_vulnerable_areas_1(feature, layer) {
+        function pop_VisionZeroVulnerableAreas_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID_1'] !== null ? autolinker.link(String(feature.properties['OBJECTID_1']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -113,15 +113,15 @@
 			});
 			layer.bindPopup(content, { maxHeight: 400 });
         }
-        function style_vulnerable_areas_1_0(feature) {
+        function style_VisionZeroVulnerableAreas_1_0(feature) {
             var context = {
                 feature: feature,
                 variables: {}
             };
             // Start of if blocks and style check logic
-            if (exp_vulnerable_areas_1rule0_eval_expression(context)) {
+            if (exp_VisionZeroVulnerableAreas_1rule0_eval_expression(context)) {
                   return {
-                pane: 'pane_vulnerable_areas_1',
+                pane: 'pane_VisionZeroVulnerableAreas_1',
                 opacity: 1,
                 color: 'rgba(110,110,110,1.0)',
                 dashArray: '',
@@ -134,9 +134,9 @@
                 interactive: false,
             };
                 }
-                else if (exp_vulnerable_areas_1rule1_eval_expression(context)) {
+                else if (exp_VisionZeroVulnerableAreas_1rule1_eval_expression(context)) {
                   return {
-                pane: 'pane_vulnerable_areas_1',
+                pane: 'pane_VisionZeroVulnerableAreas_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -153,21 +153,21 @@
                 return {fill: false, stroke: false};
             }
         }
-        map.createPane('pane_vulnerable_areas_1');
-        map.getPane('pane_vulnerable_areas_1').style.zIndex = 401;
-        map.getPane('pane_vulnerable_areas_1').style['mix-blend-mode'] = 'normal';
-        var layer_vulnerable_areas_1 = new L.geoJson(json_vulnerable_areas_1, {
+        map.createPane('pane_VisionZeroVulnerableAreas_1');
+        map.getPane('pane_VisionZeroVulnerableAreas_1').style.zIndex = 401;
+        map.getPane('pane_VisionZeroVulnerableAreas_1').style['mix-blend-mode'] = 'normal';
+        var layer_VisionZeroVulnerableAreas_1 = new L.geoJson(json_VisionZeroVulnerableAreas_1, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_vulnerable_areas_1',
-            layerName: 'layer_vulnerable_areas_1',
-            pane: 'pane_vulnerable_areas_1',
-            onEachFeature: pop_vulnerable_areas_1,
-            style: style_vulnerable_areas_1_0,
+            dataVar: 'json_VisionZeroVulnerableAreas_1',
+            layerName: 'layer_VisionZeroVulnerableAreas_1',
+            pane: 'pane_VisionZeroVulnerableAreas_1',
+            onEachFeature: pop_VisionZeroVulnerableAreas_1,
+            style: style_VisionZeroVulnerableAreas_1_0,
         });
-        bounds_group.addLayer(layer_vulnerable_areas_1);
-        map.addLayer(layer_vulnerable_areas_1);
-        function pop_Pedestrian_HIN_2(feature, layer) {
+        bounds_group.addLayer(layer_VisionZeroVulnerableAreas_1);
+        map.addLayer(layer_VisionZeroVulnerableAreas_1);
+        function pop_PedestrianHighInjuryCorridors_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -196,9 +196,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Pedestrian_HIN_2_0() {
+        function style_PedestrianHighInjuryCorridors_2_0() {
             return {
-                pane: 'pane_Pedestrian_HIN_2',
+                pane: 'pane_PedestrianHighInjuryCorridors_2',
                 opacity: 1,
                 color: 'rgba(31,120,180,1.0)',
                 dashArray: '',
@@ -209,21 +209,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Pedestrian_HIN_2');
-        map.getPane('pane_Pedestrian_HIN_2').style.zIndex = 402;
-        map.getPane('pane_Pedestrian_HIN_2').style['mix-blend-mode'] = 'normal';
-        var layer_Pedestrian_HIN_2 = new L.geoJson(json_Pedestrian_HIN_2, {
+        map.createPane('pane_PedestrianHighInjuryCorridors_2');
+        map.getPane('pane_PedestrianHighInjuryCorridors_2').style.zIndex = 402;
+        map.getPane('pane_PedestrianHighInjuryCorridors_2').style['mix-blend-mode'] = 'normal';
+        var layer_PedestrianHighInjuryCorridors_2 = new L.geoJson(json_PedestrianHighInjuryCorridors_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Pedestrian_HIN_2',
-            layerName: 'layer_Pedestrian_HIN_2',
-            pane: 'pane_Pedestrian_HIN_2',
-            onEachFeature: pop_Pedestrian_HIN_2,
-            style: style_Pedestrian_HIN_2_0,
+            dataVar: 'json_PedestrianHighInjuryCorridors_2',
+            layerName: 'layer_PedestrianHighInjuryCorridors_2',
+            pane: 'pane_PedestrianHighInjuryCorridors_2',
+            onEachFeature: pop_PedestrianHighInjuryCorridors_2,
+            style: style_PedestrianHighInjuryCorridors_2_0,
         });
-        bounds_group.addLayer(layer_Pedestrian_HIN_2);
-        map.addLayer(layer_Pedestrian_HIN_2);
-        function pop_Bicyclist_HIN_3(feature, layer) {
+        bounds_group.addLayer(layer_PedestrianHighInjuryCorridors_2);
+        map.addLayer(layer_PedestrianHighInjuryCorridors_2);
+        function pop_BicyclistHighInjuryCorridors_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(String(feature.properties['OBJECTID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -252,9 +252,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Bicyclist_HIN_3_0() {
+        function style_BicyclistHighInjuryCorridors_3_0() {
             return {
-                pane: 'pane_Bicyclist_HIN_3',
+                pane: 'pane_BicyclistHighInjuryCorridors_3',
                 opacity: 1,
                 color: 'rgba(11,163,44,1.0)',
                 dashArray: '',
@@ -265,21 +265,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Bicyclist_HIN_3');
-        map.getPane('pane_Bicyclist_HIN_3').style.zIndex = 403;
-        map.getPane('pane_Bicyclist_HIN_3').style['mix-blend-mode'] = 'normal';
-        var layer_Bicyclist_HIN_3 = new L.geoJson(json_Bicyclist_HIN_3, {
+        map.createPane('pane_BicyclistHighInjuryCorridors_3');
+        map.getPane('pane_BicyclistHighInjuryCorridors_3').style.zIndex = 403;
+        map.getPane('pane_BicyclistHighInjuryCorridors_3').style['mix-blend-mode'] = 'normal';
+        var layer_BicyclistHighInjuryCorridors_3 = new L.geoJson(json_BicyclistHighInjuryCorridors_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Bicyclist_HIN_3',
-            layerName: 'layer_Bicyclist_HIN_3',
-            pane: 'pane_Bicyclist_HIN_3',
-            onEachFeature: pop_Bicyclist_HIN_3,
-            style: style_Bicyclist_HIN_3_0,
+            dataVar: 'json_BicyclistHighInjuryCorridors_3',
+            layerName: 'layer_BicyclistHighInjuryCorridors_3',
+            pane: 'pane_BicyclistHighInjuryCorridors_3',
+            onEachFeature: pop_BicyclistHighInjuryCorridors_3,
+            style: style_BicyclistHighInjuryCorridors_3_0,
         });
-        bounds_group.addLayer(layer_Bicyclist_HIN_3);
-        map.addLayer(layer_Bicyclist_HIN_3);
-        function pop_Road_Segment_5951585966316696895_4(feature, layer) {
+        bounds_group.addLayer(layer_BicyclistHighInjuryCorridors_3);
+        map.addLayer(layer_BicyclistHighInjuryCorridors_3);
+        function pop_TDOTnonNDOTROW_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['NBR_TENN_CNTY'] !== null ? autolinker.link(String(feature.properties['NBR_TENN_CNTY']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -383,9 +383,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Road_Segment_5951585966316696895_4_0() {
+        function style_TDOTnonNDOTROW_4_0() {
             return {
-                pane: 'pane_Road_Segment_5951585966316696895_4',
+                pane: 'pane_TDOTnonNDOTROW_4',
                 opacity: 1,
                 color: 'rgba(255,0,51,1.0)',
                 dashArray: '',
@@ -396,21 +396,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Road_Segment_5951585966316696895_4');
-        map.getPane('pane_Road_Segment_5951585966316696895_4').style.zIndex = 404;
-        map.getPane('pane_Road_Segment_5951585966316696895_4').style['mix-blend-mode'] = 'normal';
-        var layer_Road_Segment_5951585966316696895_4 = new L.geoJson(json_Road_Segment_5951585966316696895_4, {
+        map.createPane('pane_TDOTnonNDOTROW_4');
+        map.getPane('pane_TDOTnonNDOTROW_4').style.zIndex = 404;
+        map.getPane('pane_TDOTnonNDOTROW_4').style['mix-blend-mode'] = 'normal';
+        var layer_TDOTnonNDOTROW_4 = new L.geoJson(json_TDOTnonNDOTROW_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Road_Segment_5951585966316696895_4',
-            layerName: 'layer_Road_Segment_5951585966316696895_4',
-            pane: 'pane_Road_Segment_5951585966316696895_4',
-            onEachFeature: pop_Road_Segment_5951585966316696895_4,
-            style: style_Road_Segment_5951585966316696895_4_0,
+            dataVar: 'json_TDOTnonNDOTROW_4',
+            layerName: 'layer_TDOTnonNDOTROW_4',
+            pane: 'pane_TDOTnonNDOTROW_4',
+            onEachFeature: pop_TDOTnonNDOTROW_4,
+            style: style_TDOTnonNDOTROW_4_0,
         });
-        bounds_group.addLayer(layer_Road_Segment_5951585966316696895_4);
-        map.addLayer(layer_Road_Segment_5951585966316696895_4);
-        function pop_Traffic_Accidents_2_csv_5(feature, layer) {
+        bounds_group.addLayer(layer_TDOTnonNDOTROW_4);
+        map.addLayer(layer_TDOTnonNDOTROW_4);
+        function pop_TrafficAccidentsInvolvingPedestrians_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Accident Number</th>\
@@ -505,9 +505,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Traffic_Accidents_2_csv_5_0() {
+        function style_TrafficAccidentsInvolvingPedestrians_5_0() {
             return {
-                pane: 'pane_Traffic_Accidents_2_csv_5',
+                pane: 'pane_TrafficAccidentsInvolvingPedestrians_5',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -521,26 +521,43 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Traffic_Accidents_2_csv_5');
-        map.getPane('pane_Traffic_Accidents_2_csv_5').style.zIndex = 405;
-        map.getPane('pane_Traffic_Accidents_2_csv_5').style['mix-blend-mode'] = 'normal';
-        var layer_Traffic_Accidents_2_csv_5 = new L.geoJson(json_Traffic_Accidents_2_csv_5, {
+        map.createPane('pane_TrafficAccidentsInvolvingPedestrians_5');
+        map.getPane('pane_TrafficAccidentsInvolvingPedestrians_5').style.zIndex = 405;
+        map.getPane('pane_TrafficAccidentsInvolvingPedestrians_5').style['mix-blend-mode'] = 'normal';
+        var layer_TrafficAccidentsInvolvingPedestrians_5 = new L.geoJson(json_TrafficAccidentsInvolvingPedestrians_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Traffic_Accidents_2_csv_5',
-            layerName: 'layer_Traffic_Accidents_2_csv_5',
-            pane: 'pane_Traffic_Accidents_2_csv_5',
-            onEachFeature: pop_Traffic_Accidents_2_csv_5,
+            dataVar: 'json_TrafficAccidentsInvolvingPedestrians_5',
+            layerName: 'layer_TrafficAccidentsInvolvingPedestrians_5',
+            pane: 'pane_TrafficAccidentsInvolvingPedestrians_5',
+            onEachFeature: pop_TrafficAccidentsInvolvingPedestrians_5,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Traffic_Accidents_2_csv_5_0(feature));
+                return L.circleMarker(latlng, style_TrafficAccidentsInvolvingPedestrians_5_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Traffic_Accidents_2_csv_5);
-        map.addLayer(layer_Traffic_Accidents_2_csv_5);
+        bounds_group.addLayer(layer_TrafficAccidentsInvolvingPedestrians_5);
+        map.addLayer(layer_TrafficAccidentsInvolvingPedestrians_5);
+        var overlaysTree = [
+            {label: '<img src="legend/TrafficAccidentsInvolvingPedestrians_5.png" /> Traffic Accidents Involving Pedestrian(s)', layer: layer_TrafficAccidentsInvolvingPedestrians_5},
+            {label: '<img src="legend/TDOTnonNDOTROW_4.png" /> TDOT/non-NDOT ROW', layer: layer_TDOTnonNDOTROW_4},
+            {label: '<img src="legend/BicyclistHighInjuryCorridors_3.png" /> Bicyclist High Injury Corridors', layer: layer_BicyclistHighInjuryCorridors_3},
+            {label: '<img src="legend/PedestrianHighInjuryCorridors_2.png" /> Pedestrian High Injury Corridors', layer: layer_PedestrianHighInjuryCorridors_2},
+            {label: 'Vision Zero Vulnerable Areas<br /><table><tr><td style="text-align: center;"><img src="legend/VisionZeroVulnerableAreas_1_VulnerableArea0.png" /></td><td>Vulnerable Area</td></tr><tr><td style="text-align: center;"><img src="legend/VisionZeroVulnerableAreas_1_HighlyVulnerableArea1.png" /></td><td>Highly Vulnerable Area</td></tr></table>', layer: layer_VisionZeroVulnerableAreas_1},
+            {label: "Google Satellite", layer: layer_GoogleSatellite_0, radioGroup: 'bm' },]
+        var lay = L.control.layers.tree(null, overlaysTree,{
+            //namedToggle: true,
+            //selectorBack: false,
+            //closedSymbol: '&#8862; &#x1f5c0;',
+            //openedSymbol: '&#8863; &#x1f5c1;',
+            //collapseAll: 'Collapse all',
+            //expandAll: 'Expand all',
+            collapsed: true,
+        });
+        lay.addTo(map);
         setBounds();
         </script>
     </body>
