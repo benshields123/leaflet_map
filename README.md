@@ -3,5 +3,5 @@
 # Click on the blue url to open the map in a new tab
 
 # OR: simply copy and paste the link below
-# https://benshields123.github.io/leaflet_map/
+# [https://benshields123.github.io/leaflet_map/](https://benshields123.github.io/tactical_urbanism_analysis/)
 
